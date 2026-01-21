@@ -3,25 +3,44 @@ import type { Metadata } from 'next'
 import { GeistSans } from 'geist/font/sans'
 import { GeistMono } from 'geist/font/mono'
 import { Navbar } from './components/nav'
-import { Analytics } from '@vercel/analytics/react'
-import { SpeedInsights } from '@vercel/speed-insights/next'
-import Footer from './components/footer'
 import { baseUrl } from './sitemap'
 
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
   title: {
-    default: 'Next.js Portfolio Starter',
-    template: '%s | Next.js Portfolio Starter',
+    default: 'Evan Sende',
+    template: '%s | Evan Sende',
   },
-  description: 'This is my portfolio.',
+  description: 'Software Engineer specializing in Web Development with React, Vue, and Node.js. Currently working at Accor, building performant and accessible applications. Sharing thoughts on IT, innovation, and entrepreneurship.',
+  keywords: ['Evan Sende', 'Software Engineer', 'Web Developer', 'React', 'Vue', 'Node.js', 'Frontend Developer', 'IT Blog'],
+  authors: [{ name: 'Evan Sende' }],
+  creator: 'Evan Sende',
   openGraph: {
-    title: 'My Portfolio',
-    description: 'This is my portfolio.',
+    title: 'Evan Sende',
+    description: 'Software Engineer specializing in Web Development with React, Vue, and Node.js. Sharing thoughts on IT, innovation, and entrepreneurship.',
     url: baseUrl,
-    siteName: 'My Portfolio',
+    siteName: 'Evan Sende',
     locale: 'en_US',
     type: 'website',
+    images: [
+      {
+        url: '/profilepicture.jpeg',
+        width: 1200,
+        height: 630,
+        alt: 'Evan Sende',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Evan Sende',
+    description: 'Software Engineer specializing in Web Development with React, Vue, and Node.js.',
+    images: ['/profilepicture.jpeg'],
+  },
+  icons: {
+    icon: '/favicon.ico',
+    shortcut: '/favicon.ico',
+    apple: '/favicon.ico',
   },
   robots: {
     index: true,
@@ -47,7 +66,7 @@ export default function RootLayout({
     <html
       lang="en"
       className={cx(
-        'text-black bg-white dark:text-white dark:bg-black',
+        'text-black bg-white dark:text-neutral-100 dark:bg-neutral-950',
         GeistSans.variable,
         GeistMono.variable
       )}
@@ -56,9 +75,7 @@ export default function RootLayout({
         <main className="flex-auto min-w-0 mt-6 flex flex-col px-2 md:px-0">
           <Navbar />
           {children}
-          <Footer />
-          <Analytics />
-          <SpeedInsights />
+          {/* <Footer /> */}
         </main>
       </body>
     </html>

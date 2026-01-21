@@ -1,18 +1,32 @@
 import { BlogPosts } from 'app/components/posts'
+import Image from 'next/image'
 
 export default function Page() {
   return (
     <section>
-      <h1 className="mb-8 text-2xl font-semibold tracking-tighter">
-        My Portfolio
-      </h1>
-      <p className="mb-4">
-        {`I'm a Vim enthusiast and tab advocate, finding unmatched efficiency in
-        Vim's keystroke commands and tabs' flexibility for personal viewing
-        preferences. This extends to my support for static typing, where its
-        early error detection ensures cleaner code, and my preference for dark
-        mode, which eases long coding sessions by reducing eye strain.`}
-      </p>
+      <div className="flex gap-6 mb-8">
+        <div className="flex-shrink-0 min-w-[120px]">
+          <Image
+            src="/profilepicture.jpeg"
+            alt="Evan Sende"
+            width={120}
+            height={120}
+            className="rounded-full w-[120px] h-[120px] object-cover"
+            style={{ width: '120px', height: '120px' }}
+            priority
+          />
+        </div>
+        <div>
+          <h1 className="mb-4 text-2xl font-semibold tracking-tighter">
+            About
+          </h1>
+          <p className="mb-4">
+            {`I'm a Software Engineer specializing in Web Development with React, Vue, and Node.js, currently
+            working as a Frontend Developer at Accor. I focus on building performant,
+            accessible applications with clean code and best practices.`}
+          </p>
+        </div>
+      </div>
       <div className="my-8">
         <BlogPosts />
       </div>
