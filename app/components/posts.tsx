@@ -3,6 +3,7 @@ import { formatDate, getBlogPosts } from 'app/blog/utils'
 
 export function BlogPosts() {
   let allBlogs = getBlogPosts()
+  let isDev = process.env.NODE_ENV === 'development'
 
   return (
     <div>
@@ -28,6 +29,11 @@ export function BlogPosts() {
               <p className="text-neutral-900 dark:text-neutral-100 tracking-tight">
                 {post.metadata.title}
               </p>
+              {isDev && (
+                <span className="inline-flex items-center rounded border border-neutral-300 px-2 py-0.5 text-xs uppercase text-neutral-600 dark:border-neutral-700 dark:text-neutral-400">
+                  {post.metadata.status ?? 'public'}
+                </span>
+              )}
             </div>
           </Link>
         ))}

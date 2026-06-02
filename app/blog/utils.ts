@@ -6,6 +6,7 @@ type Metadata = {
   publishedAt: string
   summary: string
   image?: string
+  status?: 'public' | 'private'
 }
 
 function parseFrontmatter(fileContent: string) {
@@ -18,9 +19,16 @@ function parseFrontmatter(fileContent: string) {
 
   frontMatterLines.forEach((line) => {
     let [key, ...valueArr] = line.split(': ')
+    let keyName = key.trim() as keyof Metadata
     let value = valueArr.join(': ').trim()
     value = value.replace(/^['"](.*)['"]$/, '$1') // Remove quotes
-    metadata[key.trim() as keyof Metadata] = value
+
+    if (keyName === 'status') {
+      metadata.status = value === 'private' ? 'private' : 'public'
+      return
+    }
+
+    metadata[keyName] = value
   })
 
   return { metadata: metadata as Metadata, content }
@@ -50,7 +58,14 @@ function getMDXData(dir) {
 }
 
 export function getBlogPosts() {
-  return getMDXData(path.join(process.cwd(), 'app', 'blog', 'posts'))
+  let posts = getMDXData(path.join(process.cwd(), 'app', 'blog', 'posts'))
+  let isDev = process.env.NODE_ENV === 'development'
+  let showPrivatePosts = isDev || process.env.SHOW_PRIVATE_POSTS === 'true'
+
+  return posts.filter((post) => {
+    if (showPrivatePosts) return true
+    return (post.metadata.status ?? 'public') === 'public'
+  })
 }
 
 export function formatDate(date: string, includeRelative = false) {

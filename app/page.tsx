@@ -22,8 +22,8 @@ export default function Page() {
           </h1>
           <p className="mb-4">
             {`I'm a Software Engineer specializing in Web Development with React, Vue, and Node.js, currently
-            working as a Frontend Developer at Accor. I focus on building performant,
-            accessible applications with clean code and best practices.`}
+            working as a Frontend Developer at Accor and building Dafi AI, with a vision to create
+            the Office suite for students.`}
           </p>
         </div>
       </div>
