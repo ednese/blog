@@ -542,6 +542,7 @@ export const stackRows: Tech[] = [
   { name: 'Nuxt', icon: '/tech/nuxt.svg', color: '#00DC82' },
   { name: 'React', icon: '/tech/react.svg', color: '#61DAFB' },
   { name: 'Next.js', icon: '/tech/nextjs.svg', color: 'ink' },
+  { name: 'Node.js', icon: '/tech/nodejs.svg', color: '#5FA04E' },
   { name: 'React Native', icon: '/tech/react.svg', color: '#61DAFB' },
   { name: 'Vitest', icon: '/tech/vitest.svg', color: '#6E9F18' },
   { name: 'Playwright', icon: '/tech/playwright.svg', color: '#2EAD33', multicolor: true },
