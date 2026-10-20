@@ -2,8 +2,15 @@ import './global.css'
 import type { Metadata } from 'next'
 import { GeistSans } from 'geist/font/sans'
 import { GeistMono } from 'geist/font/mono'
+import { Newsreader } from 'next/font/google'
 import { Navbar } from './components/nav'
 import { baseUrl } from './sitemap'
+
+const serif = Newsreader({
+  subsets: ['latin'],
+  variable: '--font-serif',
+  display: 'swap',
+})
 
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
@@ -11,13 +18,13 @@ export const metadata: Metadata = {
     default: 'Evan Sende',
     template: '%s | Evan Sende',
   },
-  description: 'Software Engineer specializing in Web Development with React, Vue, and Node.js. Currently working at Accor, building performant and accessible applications. Sharing thoughts on IT, innovation, and entrepreneurship.',
-  keywords: ['Evan Sende', 'Software Engineer', 'Web Developer', 'React', 'Vue', 'Node.js', 'Frontend Developer', 'IT Blog'],
+  description: 'Frontend engineer at Accor and founding frontend engineer at DAFi. React, Vue, Next.js, Nuxt, TypeScript and AI-native workflows. Moving to Toronto in January 2027.',
+  keywords: ['Evan Sende', 'Frontend Engineer', 'React', 'React Native', 'Vue', 'Next.js', 'Nuxt', 'TypeScript', 'Toronto', 'DAFi', 'Accor'],
   authors: [{ name: 'Evan Sende' }],
   creator: 'Evan Sende',
   openGraph: {
     title: 'Evan Sende',
-    description: 'Software Engineer specializing in Web Development with React, Vue, and Node.js. Sharing thoughts on IT, innovation, and entrepreneurship.',
+    description: 'Frontend engineer at Accor and founding frontend engineer at DAFi. Moving to Toronto in January 2027.',
     url: baseUrl,
     siteName: 'Evan Sende',
     locale: 'en_US',
@@ -34,7 +41,7 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'Evan Sende',
-    description: 'Software Engineer specializing in Web Development with React, Vue, and Node.js.',
+    description: 'Frontend engineer at Accor and founding frontend engineer at DAFi.',
     images: ['/profilepicture.jpeg'],
   },
   icons: {
@@ -66,14 +73,14 @@ export default function RootLayout({
     <html
       lang="en"
       className={cx(
-        'text-black bg-white dark:text-neutral-100 dark:bg-neutral-950',
         GeistSans.variable,
-        GeistMono.variable
+        GeistMono.variable,
+        serif.variable
       )}
     >
-      <body className="antialiased max-w-xl mx-4 mt-8 lg:mx-auto">
-        <main className="flex-auto min-w-0 mt-6 flex flex-col px-2 md:px-0">
-          <Navbar />
+      <body className="antialiased">
+        <Navbar />
+        <main className="max-w-2xl mx-4 md:mx-auto min-w-0 flex flex-col px-2 md:px-0">
           {children}
           {/* <Footer /> */}
         </main>
