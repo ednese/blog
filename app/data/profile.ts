@@ -620,15 +620,6 @@ export const schools: School[] = [
   },
 ]
 
-export const sideProjects = [
-  {
-    name: 'vue-page-element-transition',
-    href: 'https://github.com/ednese/vue-page-element-transition',
-    demo: 'https://vue-page-element-transition.vercel.app/',
-    text: 'Vue plugin for transitions between elements on different pages, published on npm.',
-  },
-]
-
 export type PianoVideo = {
   title: string
   composer?: string

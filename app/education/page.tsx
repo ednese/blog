@@ -1,7 +1,7 @@
 import { CompanyLogo } from 'app/components/company-logo'
 import { Reveal } from 'app/components/reveal'
 import { formatRange } from 'app/components/timeline'
-import { schools, sideProjects } from 'app/data/profile'
+import { schools } from 'app/data/profile'
 
 export const metadata = {
   title: 'Education',
@@ -87,24 +87,6 @@ export default function Education() {
         </section>
       ))}
 
-      <section className="mb-12" aria-labelledby="side">
-        <h2 id="side" className="kicker">Side projects</h2>
-        <ul>
-          {sideProjects.map((project) => (
-            <li key={project.href} className="row-hover py-3 rule-b">
-              <a href={project.href} target="_blank" rel="noopener noreferrer" className="group block">
-                <span className="font-semibold group-hover:text-[color:var(--accent)] transition-colors">
-                  {project.name} <span className="arrow text-xs">↗</span>
-                </span>
-                <span className="block text-sm muted">{project.text}</span>
-              </a>
-              <a href={project.demo} target="_blank" rel="noopener noreferrer" className="link text-xs faint">
-                Live demo
-              </a>
-            </li>
-          ))}
-        </ul>
-      </section>
     </section>
   )
 }
