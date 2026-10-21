@@ -1,5 +1,5 @@
 // Every fact and number below comes from my CV,
-// except Fifteen (from an earlier CV), the education dates (LinkedIn) and
+// except part of Fifteen (from an earlier CV), the education dates (LinkedIn) and
 // DAFi usage (admin dashboard). Keep DAFi revenue, trials and subscriptions out.
 // Don't add a figure here that isn't in one of those.
 
@@ -100,7 +100,7 @@ export const roles: Role[] = [
     // Usage only: revenue, trials and subscriptions stay private
     stats: [
       { value: '~7,900', label: 'iOS users' },
-      { value: '3', label: 'Surfaces shipped: web, iOS, MCP for Claude and ChatGPT' },
+      { value: '2', label: 'Apps rebuilt: web and iOS' },
       { value: '1,300+', label: 'Commits, part-time, since Jan 2026' },
       { value: '23', label: 'Languages' },
     ],
@@ -127,12 +127,12 @@ export const roles: Role[] = [
         text: 'Stripe Checkout with a free trial flow and a countdown paywall, the Stripe Billing Portal on web and in the app, and Superwall and RevenueCat paywalls on iOS.',
       },
       {
-        title: 'MCP server',
-        text: 'Shipped an MCP server to production so students can use DAFi from Claude and ChatGPT.',
+        title: 'MCP connection',
+        text: 'Built the in-app "connect your MCP" screen that lets students link DAFi to Claude and ChatGPT. The MCP server itself is the backend engineer’s work.',
       },
       {
         title: 'DAFi Companion',
-        text: 'Claude Code harness for the team: confidence-gated scoping, UX review, web and mobile parity, and a verifier agent.',
+        text: 'Claude Code harness, built with Claude Code from a colleague’s setup and now used by the whole team: confidence-gated scoping, UX review, web and mobile parity, and a verifier agent. Tickets per month went from about 10 (Feb–Jun) to 26 in September.',
       },
       {
         title: 'Native features',
@@ -387,7 +387,11 @@ export const roles: Role[] = [
       },
       {
         title: 'Quality',
-        text: 'Introduced unit testing and worked on performance, SEO and accessibility.',
+        text: 'Introduced unit testing, improved CLS and TTFB by about 50%, and worked on SEO and accessibility.',
+      },
+      {
+        title: 'Mentoring',
+        text: 'After two lead-developer changes, became the go-to engineer for codebase context and debugging, and mentored a junior developer.',
       },
     ],
     links: [{ label: 'paris-turf.com', href: 'https://www.paris-turf.com' }],
@@ -460,6 +464,14 @@ export const roles: Role[] = [
         text: 'Set up Docker and shipped the apps to production through Git and GCP.',
       },
       {
+        title: 'fifteen.eu',
+        text: 'After the Zoov and Smoove merger, built the new fifteen.eu website as an early adopter of Vue 3 and Nuxt 3, and contributed to the design system.',
+      },
+      {
+        title: 'Map tools',
+        text: 'Migrated two legacy jQuery map-based data visualization tools of the admin platform to Vue 2, Vuetify and Mapbox.',
+      },
+      {
         title: 'Agile',
         text: 'Agile project management and Scrum ceremonies.',
       },
@@ -512,7 +524,7 @@ export const strengths = [
   },
   {
     title: 'AI tooling',
-    text: 'An MCP server in production and a Claude Code harness for a whole team.',
+    text: 'A Claude Code harness used by the whole team at DAFi, and the app side of its MCP connection to Claude and ChatGPT.',
     href: '/career/dafi',
   },
   {
